@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds14sb78awfyq"]
+
+[ext_resource type="Script" path="res://Scenes/spawnerpuntaje.gd" id="1_l16ln"]
+
+[node name="Spawnerpuntaje" type="Node2D"]
+script = ExtResource("1_l16ln")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

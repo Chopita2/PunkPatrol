@@ -1,0 +1,94 @@
+[gd_scene load_steps=10 format=3 uid="uid://doryoeicprkg0"]
+
+[ext_resource type="Script" path="res://Scenes/Menu.gd" id="1_ki6m2"]
+[ext_resource type="Texture2D" uid="uid://7hh0wqs5gota" path="res://Assets/Fondo1 Recultador.jpg" id="2_v7pbh"]
+[ext_resource type="AudioStream" uid="uid://4sxymwddfccd" path="res://Assets/Sound_Background.wav" id="3_fphhn"]
+[ext_resource type="Texture2D" uid="uid://bkle23ckej1up" path="res://Assets/GUI/Buttons/Square-Medium/Home/Hover.png" id="3_gohox"]
+[ext_resource type="FontFile" uid="uid://dtys4itrty3bx" path="res://Assets/PressStart2P-Regular.ttf" id="3_le6ro"]
+[ext_resource type="Texture2D" uid="uid://cdng2781ce2vy" path="res://Assets/GUI/Buttons/Square-Medium/Play/Hover.png" id="4_wc3h7"]
+
+[sub_resource type="Theme" id="Theme_osxjk"]
+default_font = ExtResource("3_le6ro")
+default_font_size = 13
+
+[sub_resource type="Theme" id="Theme_5ir6w"]
+default_font = ExtResource("3_le6ro")
+default_font_size = 14
+
+[sub_resource type="Theme" id="Theme_ir6j8"]
+default_font = ExtResource("3_le6ro")
+
+[node name="Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ki6m2")
+
+[node name="Cover" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 487.0
+offset_bottom = 272.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("2_v7pbh")
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Cover"]
+layout_mode = 0
+offset_left = 52.5
+offset_top = 312.5
+offset_right = 286.5
+offset_bottom = 339.5
+scale = Vector2(3, 3)
+
+[node name="label" type="Label" parent="Cover/MarginContainer"]
+layout_mode = 2
+theme = SubResource("Theme_osxjk")
+text = "APOCALYPSIS STUDIO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Fondo" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("3_fphhn")
+volume_db = 1.0
+autoplay = true
+
+[node name="salir" type="Button" parent="."]
+layout_mode = 2
+offset_left = 149.0
+offset_top = 60.0
+offset_right = 245.0
+offset_bottom = 156.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_5ir6w")
+theme_override_colors/font_color = Color(0.878431, 0.933333, 0.996078, 1)
+text = "SALIR"
+icon = ExtResource("3_gohox")
+flat = true
+icon_alignment = 1
+
+[node name="iniciar" type="Button" parent="."]
+layout_mode = 2
+offset_left = 101.0
+offset_top = 61.0
+offset_right = 203.0
+offset_bottom = 157.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_ir6j8")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "PLAY"
+icon = ExtResource("4_wc3h7")
+flat = true
+icon_alignment = 1
+
+[connection signal="pressed" from="salir" to="." method="_on_salir_pressed"]
+[connection signal="pressed" from="iniciar" to="." method="_on_iniciar_pressed"]

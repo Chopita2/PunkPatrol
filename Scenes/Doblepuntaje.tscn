@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dw7xhsne12wp"]
+
+[ext_resource type="Script" path="res://Scenes/Doblepuntaje.gd" id="1_aj8j0"]
+[ext_resource type="Texture2D" uid="uid://c7rde4hex70an" path="res://Assets/manzana.png" id="1_htn8d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kvbj4"]
+size = Vector2(14, 14)
+
+[node name="Doblepuntaje" type="Area2D"]
+script = ExtResource("1_aj8j0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-1, -2)
+scale = Vector2(0.18, 0.18)
+texture = ExtResource("1_htn8d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -2)
+shape = SubResource("RectangleShape2D_kvbj4")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

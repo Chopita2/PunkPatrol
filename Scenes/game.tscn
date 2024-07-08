@@ -1,0 +1,351 @@
+[gd_scene load_steps=25 format=3 uid="uid://drwrf4sxu1iya"]
+
+[ext_resource type="PackedScene" uid="uid://cwterfi8pnlcf" path="res://Scenes/player.tscn" id="1_f4llw"]
+[ext_resource type="Script" path="res://Scenes/game.gd" id="1_lmc3c"]
+[ext_resource type="Texture2D" uid="uid://c7pno54pbibc7" path="res://Assets/Fondo/Fondogame.jpg" id="2_u3o0q"]
+[ext_resource type="PackedScene" uid="uid://caubln4fapoje" path="res://Scenes/spawner.tscn" id="4_glfxk"]
+[ext_resource type="Script" path="res://Scenes/pantallamuerte.gd" id="5_gbmo8"]
+[ext_resource type="Texture2D" uid="uid://bt5r0n74twh70" path="res://Assets/GUI/Buttons/Square-Medium/Repeat/Default.png" id="6_14uvl"]
+[ext_resource type="AudioStream" uid="uid://fyafgq22pc18" path="res://Assets/Soundingame.wav" id="6_rf6lq"]
+[ext_resource type="Texture2D" uid="uid://b832unqb12j5e" path="res://Assets/tileset_lava.png" id="7_1abf5"]
+[ext_resource type="Texture2D" uid="uid://u8hjj3n7vm8y" path="res://Assets/GUI/Buttons/Square-Medium/Home/Default.png" id="7_sl2e6"]
+[ext_resource type="FontFile" uid="uid://dtys4itrty3bx" path="res://Assets/PressStart2P-Regular.ttf" id="9_orr0b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v2dxm"]
+size = Vector2(322, 17.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g6pjw"]
+size = Vector2(6, 180.5)
+
+[sub_resource type="Theme" id="Theme_k2hiq"]
+default_font = ExtResource("9_orr0b")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4gp4r"]
+font_size = 12
+
+[sub_resource type="Theme" id="Theme_i8gs6"]
+default_font = ExtResource("9_orr0b")
+default_font_size = 10
+
+[sub_resource type="Theme" id="Theme_mc6ik"]
+default_font = ExtResource("9_orr0b")
+
+[sub_resource type="Theme" id="Theme_mekyd"]
+default_font = ExtResource("9_orr0b")
+default_font_size = 8
+
+[sub_resource type="Theme" id="Theme_hvpc5"]
+default_font = ExtResource("9_orr0b")
+default_font_size = 9
+
+[sub_resource type="Theme" id="Theme_usono"]
+default_font = ExtResource("9_orr0b")
+default_font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_5d3os"]
+font_size = 9
+shadow_color = Color(0.215686, 0.101961, 0.247059, 0)
+
+[sub_resource type="Theme" id="Theme_6vec8"]
+default_font = ExtResource("9_orr0b")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gk2w5"]
+font_size = 13
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4me8g"]
+texture = ExtResource("7_1abf5")
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+3:1/0 = 0
+3:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:1/0/physics_layer_0/angular_velocity = 0.0
+4:1/0 = 0
+4:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:1/0/physics_layer_0/angular_velocity = 0.0
+5:1/0 = 0
+5:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0 = 0
+6:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:1/0/physics_layer_0/angular_velocity = 0.0
+6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.25, 8, 8, -6.375, -4.625)
+7:1/0 = 0
+7:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:1/0/physics_layer_0/angular_velocity = 0.0
+7:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 4.25, -2.625, -8, 8, -8, -4.125)
+9:1/0 = 0
+9:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:1/0/physics_layer_0/angular_velocity = 0.0
+9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -4.625, 4.25, -0.875, -4.25, -1.375, -8, -4.125)
+11:1/0 = 0
+11:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:1/0/physics_layer_0/angular_velocity = 0.0
+12:1/0 = 0
+12:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:1/0/physics_layer_0/angular_velocity = 0.0
+13:1/0 = 0
+13:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:1/0/physics_layer_0/angular_velocity = 0.0
+1:2/0 = 0
+1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:2/0/physics_layer_0/angular_velocity = 0.0
+2:2/0 = 0
+2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:2/0/physics_layer_0/angular_velocity = 0.0
+3:2/0 = 0
+3:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:2/0/physics_layer_0/angular_velocity = 0.0
+4:2/0 = 0
+4:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:2/0/physics_layer_0/angular_velocity = 0.0
+5:2/0 = 0
+5:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:2/0/physics_layer_0/angular_velocity = 0.0
+1:3/0 = 0
+1:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:3/0/physics_layer_0/angular_velocity = 0.0
+2:3/0 = 0
+2:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:3/0/physics_layer_0/angular_velocity = 0.0
+3:3/0 = 0
+3:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:3/0/physics_layer_0/angular_velocity = 0.0
+4:3/0 = 0
+4:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:3/0/physics_layer_0/angular_velocity = 0.0
+5:3/0 = 0
+5:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:3/0/physics_layer_0/angular_velocity = 0.0
+7:3/0 = 0
+7:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+7:3/0/physics_layer_0/angular_velocity = 0.0
+8:3/0 = 0
+8:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:3/0/physics_layer_0/angular_velocity = 0.0
+9:3/0 = 0
+9:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:3/0/physics_layer_0/angular_velocity = 0.0
+10:3/0 = 0
+10:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:3/0/physics_layer_0/angular_velocity = 0.0
+11:3/0 = 0
+11:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:3/0/physics_layer_0/angular_velocity = 0.0
+12:3/0 = 0
+12:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:3/0/physics_layer_0/angular_velocity = 0.0
+13:3/0 = 0
+13:3/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+13:3/0/physics_layer_0/angular_velocity = 0.0
+1:4/0 = 0
+1:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:4/0/physics_layer_0/angular_velocity = 0.0
+2:4/0 = 0
+2:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:4/0/physics_layer_0/angular_velocity = 0.0
+3:4/0 = 0
+3:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:4/0/physics_layer_0/angular_velocity = 0.0
+4:4/0 = 0
+4:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:4/0/physics_layer_0/angular_velocity = 0.0
+5:4/0 = 0
+5:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+5:4/0/physics_layer_0/angular_velocity = 0.0
+8:4/0 = 0
+8:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+8:4/0/physics_layer_0/angular_velocity = 0.0
+9:4/0 = 0
+9:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:4/0/physics_layer_0/angular_velocity = 0.0
+10:4/0 = 0
+10:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:4/0/physics_layer_0/angular_velocity = 0.0
+11:4/0 = 0
+11:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:4/0/physics_layer_0/angular_velocity = 0.0
+12:4/0 = 0
+12:4/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:4/0/physics_layer_0/angular_velocity = 0.0
+9:5/0 = 0
+9:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+9:5/0/physics_layer_0/angular_velocity = 0.0
+10:5/0 = 0
+10:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+10:5/0/physics_layer_0/angular_velocity = 0.0
+11:5/0 = 0
+11:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+11:5/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_nctjv"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_4me8g")
+
+[node name="Game" type="Node"]
+script = ExtResource("1_lmc3c")
+
+[node name="Bosque" type="Sprite2D" parent="."]
+position = Vector2(161.5, 89.55)
+scale = Vector2(1.00312, 0.8945)
+texture = ExtResource("2_u3o0q")
+
+[node name="Player" parent="." instance=ExtResource("1_f4llw")]
+position = Vector2(157, 144)
+
+[node name="Colisiones" type="Node" parent="."]
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="Colisiones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones/StaticBody2D4"]
+position = Vector2(162, 170)
+shape = SubResource("RectangleShape2D_v2dxm")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Colisiones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones/StaticBody2D"]
+position = Vector2(160, 9)
+shape = SubResource("RectangleShape2D_v2dxm")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Colisiones"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones/StaticBody2D2"]
+position = Vector2(3, 89.25)
+shape = SubResource("RectangleShape2D_g6pjw")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="Colisiones"]
+position = Vector2(316, 2)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colisiones/StaticBody2D3"]
+position = Vector2(3, 89.25)
+shape = SubResource("RectangleShape2D_g6pjw")
+
+[node name="Spawner7" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(41, 23)
+
+[node name="Spawner8" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(86, 23)
+
+[node name="Spawner9" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(139, 24)
+
+[node name="Spawner10" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(199, 25)
+
+[node name="Spawner11" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(265, 27)
+
+[node name="Spawner" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(294, 27)
+
+[node name="Spawner2" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(230, 25)
+
+[node name="Spawner3" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(172, 24)
+
+[node name="Spawner4" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(111, 23)
+
+[node name="Spawner5" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(66, 23)
+
+[node name="Spawner6" parent="Colisiones" instance=ExtResource("4_glfxk")]
+position = Vector2(17, 23)
+
+[node name="pantallamuerte" type="CanvasLayer" parent="."]
+process_mode = 3
+visible = false
+script = ExtResource("5_gbmo8")
+
+[node name="labeldied" type="Label" parent="pantallamuerte"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -116.0
+offset_top = -36.0
+offset_right = 120.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_k2hiq")
+text = "Te atraparon los enemigos"
+label_settings = SubResource("LabelSettings_4gp4r")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pantallamuerte"]
+offset_left = 89.0
+offset_top = 74.0
+offset_right = 243.0
+offset_bottom = 105.0
+
+[node name="Label" type="Label" parent="pantallamuerte/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_i8gs6")
+text = "Puntaje Final:"
+
+[node name="FinalScore" type="Label" parent="pantallamuerte/HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_mc6ik")
+text = "0"
+
+[node name="Reiniciar" type="Button" parent="pantallamuerte"]
+offset_left = 111.0
+offset_top = 110.0
+offset_right = 211.0
+offset_bottom = 206.0
+scale = Vector2(0.5, 0.5)
+theme = SubResource("Theme_mekyd")
+text = "Reiniciar"
+icon = ExtResource("6_14uvl")
+flat = true
+icon_alignment = 1
+
+[node name="salir" type="Button" parent="pantallamuerte"]
+offset_left = 165.0
+offset_top = 111.0
+offset_right = 261.0
+offset_bottom = 207.0
+scale = Vector2(0.48, 0.48)
+theme = SubResource("Theme_hvpc5")
+text = "Salir"
+icon = ExtResource("7_sl2e6")
+flat = true
+icon_alignment = 1
+
+[node name="Sonidomain" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_rf6lq")
+volume_db = 1.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+offset_left = 82.0
+offset_top = -3.0
+offset_right = 243.0
+offset_bottom = 29.0
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_usono")
+text = "Naves obtenidas:"
+label_settings = SubResource("LabelSettings_5d3os")
+
+[node name="Score" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_6vec8")
+text = "0"
+label_settings = SubResource("LabelSettings_gk2w5")
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_nctjv")
+format = 2
+layer_0/tile_data = PackedInt32Array(655360, 524288, 3, 655361, 589824, 3, 655362, 655360, 3, 655363, 720896, 3, 655364, 786432, 3, 655366, 589824, 3, 655365, 524288, 3, 655367, 655360, 3, 655368, 720896, 3, 655369, 786432, 3, 655370, 524288, 3, 655371, 589824, 3, 655372, 655360, 3, 655374, 786432, 3, 655373, 720896, 3, 655375, 524288, 3, 655376, 589824, 3, 655377, 655360, 3, 655378, 720896, 3, 655379, 786432, 3, 720896, 524288, 4, 720897, 589824, 4, 786433, 589824, 5, 720898, 655360, 4, 786434, 655360, 5, 720899, 720896, 4, 786435, 720896, 5, 720900, 786432, 4, 720901, 524288, 4, 720902, 589824, 4, 786438, 589824, 5, 720903, 655360, 4, 786439, 655360, 5, 720904, 720896, 4, 786440, 720896, 5, 720905, 786432, 4, 720906, 524288, 4, 720907, 589824, 4, 786443, 589824, 5, 720908, 655360, 4, 786444, 655360, 5, 720909, 720896, 4, 786445, 720896, 5, 720910, 786432, 4, 720911, 524288, 4, 720912, 589824, 4, 786448, 589824, 5, 720913, 655360, 4, 786449, 655360, 5, 720914, 720896, 4, 786450, 720896, 5, 720915, 786432, 4, 524304, 589824, 1, 524292, 589824, 1, 393216, 393216, 1, 393217, 458752, 1, 393234, 393216, 1, 393235, 458752, 1)
+
+[connection signal="pressed" from="pantallamuerte/Reiniciar" to="pantallamuerte" method="_on_reiniciar_pressed"]
+[connection signal="pressed" from="pantallamuerte/salir" to="pantallamuerte" method="_on_salir_pressed"]
